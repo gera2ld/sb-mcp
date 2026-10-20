@@ -1,0 +1,48 @@
+{
+  "name": "sb-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for SilverBullet: list, read, write, append, replace, delete and search pages through the /.fs API.",
+  "keywords": [
+    "markdown",
+    "mcp",
+    "model-context-protocol",
+    "notes",
+    "silverbullet"
+  ],
+  "homepage": "https://github.com/gera2ld/sb-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/gera2ld/sb-mcp/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gera2ld/sb-mcp.git"
+  },
+  "bin": {
+    "sb-mcp": "./dist/main.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "bun src/main.ts",
+    "dev": "bun --watch src/main.ts",
+    "build": "rm -rf dist && bun build src/main.ts --target node --outdir dist",
+    "check": "tsc --noEmit",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@types/bun": "^1.4.1",
+    "@types/node": "^26.4.1",
+    "commander": "^15.0.0",
+    "typescript": "^6.0.3",
+    "zod": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
